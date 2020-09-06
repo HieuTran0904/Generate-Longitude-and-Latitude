@@ -1,2 +1,2 @@
 # Generate-Longitude-and-Latitude
-Automate Python to generate Longitude and Latitude given the location
+Using Selenium library to automatically call Chrome. It will automatically extract the coordinate from Google Map websites.
