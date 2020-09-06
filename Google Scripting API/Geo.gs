@@ -4,7 +4,6 @@
  * @param {string} address - The address you get the latitude and longitude for.
  * @customfunction
  */
-
 function GEOCODE_GOOGLE(address) {
     if (address.map) {
         return address.map(GEOCODE_GOOGLE)
