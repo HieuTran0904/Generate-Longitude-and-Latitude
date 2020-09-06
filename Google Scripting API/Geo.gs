@@ -4,6 +4,25 @@
  * @param {string} address - The address you get the latitude and longitude for.
  * @customfunction
  */
+
+function GEOCODE_GOOGLE(address) {
+    if (address.map) {
+        return address.map(GEOCODE_GOOGLE)
+    } else {
+        var r = Maps.newGeocoder().geocode(address)
+        for (var i = 0; i < r.results.length; i++) {
+            var res = r.results[i]
+            return res.geometry.location.lat + ", " + res.geometry.location.lng
+        }
+    }
+}
+
+/**
+ * Returns latitude values for given address using the Google Maps Geocoder.
+ *
+ * @param {string} address - The address you get the latitude and longitude for.
+ * @customfunction
+ */
 function GEOCODE_GOOGLE_LAT(address) {
     if (address.map) {
         return address.map(GEOCODE_GOOGLE)
@@ -16,6 +35,12 @@ function GEOCODE_GOOGLE_LAT(address) {
     }
 }
 
+/**
+ * Returns longitude values for given address using the Google Maps Geocoder.
+ *
+ * @param {string} address - The address you get the latitude and longitude for.
+ * @customfunction
+ */
 function GEOCODE_GOOGLE_LNG(address) {
     if (address.map) {
         return address.map(GEOCODE_GOOGLE)
